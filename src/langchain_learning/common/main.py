@@ -1,5 +1,5 @@
 from langchain.chat_models import init_chat_model
-from langchain_learning.config import LLM_PROVIDER, LLM_MODEL
+from langchain_learning.common.config import LLM_PROVIDER, LLM_MODEL
 
 
 def get_llm(provider=None, model=None):

@@ -1,5 +1,5 @@
 from langchain_learning.common.main import get_llm
-from langchain_learning.config import LLM_PROVIDER, LLM_MODEL
+from langchain_learning.common.config import LLM_PROVIDER, LLM_MODEL
 
 model = get_llm()
 prompt = f"""Write a short poem about the beauty of {LLM_PROVIDER} and {LLM_MODEL}."""
