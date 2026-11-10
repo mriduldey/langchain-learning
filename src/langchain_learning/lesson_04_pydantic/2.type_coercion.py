@@ -10,9 +10,9 @@ class Student(BaseModel):
 student = Student(name="Charlie", age="20") # age will coerced from str to int -> o/p name='Charlie' age=20
 
 print(student)
+print("-----------------------------------------------------------------")
 
-
-# Configure Pydantic to enforce strict type checking by setting the `strict` parameter to `True` in the model configuration.
+# Configure Pydantic to enforce strict type checking by setting the `strict` parameter to `True` in the model configuration.4
 class StrictStudent(BaseModel):
     model_config = ConfigDict(strict=True)  # This will enforce strict type checking for all fields in the model
     name: str
@@ -20,10 +20,14 @@ class StrictStudent(BaseModel):
     
 strict_student = StrictStudent(name="David", age="20")  # This will raise a validation error because age is provided as a string
 
+print("-----------------------------------------------------------------")
+
 # Strict mode can be enabled by using the `strict` parameter in the field definition.
 class StrictFieldStudent(BaseModel):
     name: str
     age: int = Field(..., strict=True)  # This will enforce strict type checking for the age field only
 
 # This will raise a validation error because age is provided as a string
-strict_field_student = StrictFieldStudent(name="Eve", age="20")  
+strict_field_student = StrictFieldStudent(name="Eve", age="20")
+
+print("-----------------------------------------------------------------")
