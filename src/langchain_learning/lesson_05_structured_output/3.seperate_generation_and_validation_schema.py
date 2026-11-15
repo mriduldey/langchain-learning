@@ -62,7 +62,7 @@ generated = structured_model.invoke("Report an issue on line 12 titled ""'Missin
 
 if isinstance(generated, dict):
     validated = ValidatedIssue.model_validate(
-        generated["parsed"].model_dump()
+        generated["parsed"].model_dump() # as include_raw=True is used
     )
     print(validated)
 else:
