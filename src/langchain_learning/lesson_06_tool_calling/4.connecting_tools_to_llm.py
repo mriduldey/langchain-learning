@@ -41,3 +41,11 @@ print("=======================================================")
 
 # Check content has empty response [], but tool calls is not empty and tool returned is 'multiply'
 print("Multiply -> ", response_multi)
+
+# Note: We will not see the tool call printing (line 8 and 14). Because tool call does not invoke the tools.
+# So first we send the query to LLM to get which tool need to be called and then we call the tool in our app.
+# and second, we send the tool result to LLM again.
+# simply there is atleast two LLM calls involved here during tool call.
+ 
+# Note: For complex scenarios(for Agents) there will be multiple tool call, LLM will observe the result from tools and 
+# may tool call again untill the goal is reached 
