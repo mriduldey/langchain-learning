@@ -41,4 +41,4 @@ result = agent.invoke({
 
 print(result["messages"][-1].content)
 
-print(result["messages"][-1].content[0]["text"])
+print(result["messages"][-1].content[0]["text"]) 
